@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多个事件处理</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .curren{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <script>
+        $(function(){
+            // $("div").eq(0).click(function(){
+            //     $(this).css("background","blue");
+            // });
+            // $("div").eq(0).mouseover(function(){
+            //     $(this).css("background","skyblue");
+            // });
+            $("div:eq(0)").on({
+                click: function() {
+                    $("div:eq(0)").css("background","blue");
+                },
+                mouseover:function(){
+                    $(this).css("background","skyblue");
+                },
+                mouseout:function(){
+                    $(this).css("background","pink");
+                }
+            });
+            //或者拥有相同的类名的
+            // $("div:eq(1)").mouseover(function(){
+            //     $(this).addClass("curren");
+            // })
+            $("div:eq(1)").on("mouseover mouseout",function(){
+                $(this).toggleClass("curren");
+            })
+        });
+    </script>
+</body>
+</html>

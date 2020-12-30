@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获得元素属性</title>
+    <script src="jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="checkbox" name="" id="" checked />
+    <div index="1">123</div>
+    <script>
+      $(function () {
+        //利用prop获得元素的固有属性
+        console.log($("input").prop("type"));
+        console.log($("input").prop("checked"));
+        //利用attr获得元素的新加属性
+        console.log($("div").attr("index"));
+        $("div").click(function () {
+          $("input").prop("checked", false); //改变原有属性("属性","属性值")
+        });
+      });
+    </script>
+  </body>
+</html>

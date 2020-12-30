@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品的加减</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        input{
+            width: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <span>总价<em>12.96</em></span><br>
+    <span>数量</span>
+    <button>-</button>
+    <input type="text" value="1" />
+    <button>+</button><br>
+    <span>单价<em>12.96</em></span>
+    <script>
+        $(function(){
+            
+            $("button").eq(0).click(function(){//当第一个按钮点击下，就运行函数
+                let val = $("input").val();//获取input的value值
+                val--;//对val值进行计算
+                if(val >= 0){
+                $("input").val(val);//将更改后的value值重新命令回去
+                }else{
+                    $("input").val(0);
+                    $("em").eq(0).text("0");
+                }
+                $("em").eq(0).html((val*$("em").eq(1).text()).toFixed(2));//toFixed(2)里面的数字代表保留几位小数的意思
+            });
+            $("button").eq(1).click(function(){
+                let val = $("input").val();
+                val++;
+                $("input").val(val);
+                $("em").eq(0).html((val*$("em").eq(1).text()).toFixed(2));
+            });
+            $("input").change(function(){
+            let val = $("input").val();
+            $("em").eq(0).html((val*$("em").eq(1).text()).toFixed(2));
+            
+        })
+            
+        // console.log(parseFloat($("em").eq(1).text()));
+        });
+    </script>
+</body>
+</html>

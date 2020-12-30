@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>全选以及全不选</title>
+    <script src="jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="checkbox" id="checkedall" />全选 
+    <input type="checkbox" class="main" />足球
+    <input type="checkbox" class="main" />前端 
+    <input type="checkbox" class="main" />街舞
+    <script>
+      $(function () {
+        $("#checkedall").change(function () {
+          $("input").prop("checked", $(this).prop("checked"));
+        });
+        $(".main").change(function(){
+            // if($(".main").eq(0).prop("checked")&&$(".main").eq(1).prop("checked")&&$(".main").eq(2).prop("checked")){
+            //     $("#checkedall").prop("checked",true);
+            // }else{
+            //     $("#checkedall").prop("checked",false);
+            // }
+            // console.log($(".main:checked").length);
+            // console.log($(".main").length);
+            if($(".main:checked").length === $(".main").length){
+                $("#checkedall").prop("checked",true);
+            }else{
+                $("#checkedall").prop("checked",false);
+            }
+        })
+      });
+    </script>
+  </body>
+</html>

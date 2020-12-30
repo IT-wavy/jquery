@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            height: 1000px;
+            width: 1000px;
+            border: black solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="txt" cols="100" rows="100"></textarea>
+    <button>编辑</button>
+    <div></div>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                // console.log($("#txt").val());
+                let val = $("#txt").val();
+                $("div").html(val);
+            });
+        });
+    </script>
+</body>
+</html>

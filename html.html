@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        /* div{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        } */
+    </style>
+</head>
+<body>
+    <script>
+        /*第一个，加载好页面*/
+
+        // $('div').hide();
+        //1.加载页面所有元素
+        // $(document).ready(function(){
+        //     $('div').hide();
+        // })
+        //2.简化方式
+        // $(function(){
+        //     $('div').hide();
+        // })
+
+        /*第二个，顶级对象*/
+
+        // $(function(){
+        //     alert(111);
+        // })
+
+        // jQuery(function(){
+        //     alert(1111);
+        // })
+
+        /*第三个，dom对象,,,jquery对象*/
+        //  var myDiv = document.querySelector('div');//这是dom对象
+        //  console.dir(myDiv);
+
+        //  console.dir($('div'));//这是jquery对象
+
+         //注意：dom对象与jquery对象，不能使用对方的方法
+
+        /*第四个,dom对象与jquery对象的相互转换*/
+
+         //dom对象转换为jquery对象
+        //  var myDiv = document.querySelector('div');
+        //  $(myDiv);
+
+        //jquery对象转换成dom对象
+        //$('div')[index].函数方法//注意这里的index，代表索引值，应该填写0,1,2
+        // $('div').get(index).函数方法
+    </script>
+    <div></div>
+    
+</body>
+</html>

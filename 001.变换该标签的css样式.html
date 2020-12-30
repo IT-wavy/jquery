@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>大家好</div>
+    <div>大家好</div>
+    <div>大家好</div>
+    <div>大家好</div>
+
+    <script>
+        // $("div").css('color','pink');//css("属性","值")
+        $("div:first").css('color','red');//选择div的第一个
+        $("div:last").css('color','pink');//选择div的最后一个
+        $("div:eq(1)").css('color','blue');//选择索引值为1的，索引值从0开始
+        //$("div:odd")//获得索引号为奇数的
+        //$("div:even")//获得索引号为偶数的
+    </script>
+</body>
+</html>

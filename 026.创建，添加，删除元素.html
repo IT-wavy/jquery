@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建添加删除元素</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>我是原来的li列表</li>
+    </ul>
+    <div>我是原来的div标签</div>
+    <script>
+        $(function(){
+            //创建标签元素
+            let li = $("<li>我是后来的li列表</li>");
+            //在原有的基础上的后面添加标签
+            // $("ul").append(li);
+            //在原有的基础上前面添加标签
+            $("ul").prepend(li);
+
+            //创建新的div元素
+            let div = $("<div>我是后来的div元素</div>");
+            //在原有的div后面添加该标签
+            // $("div").after(div);
+            //在原有的div前面添加该标签
+            $("div").before(div);
+
+            //删除元素
+            // $("ul").remove();
+            //清空元素
+            $("ul").empty();//与上述方法不同的是，上述是直接删除ul，所以在控制台是找不到ul的
+            //而empty是指清空该元素里面的内容
+        });
+    </script>
+</body>
+</html>

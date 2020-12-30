@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标进入显示高亮</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        div{
+            width: 900px;
+            height: 500px;
+            margin: auto;
+            margin-top: 100px;
+            background-color: pink;
+        }
+        li{
+            list-style-type: none;
+            width: 300px;
+            height: 250px;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="left"><a href="#"><img src="img/o1.jpg" height="250" width="300" /></a></li>
+            <li class="left"><a href="#"><img src="img/o2.jpg" height="250" width="300" /></a></li>
+            <li class="left"><a href="#"><img src="img/o4.jpg" height="250" width="300" /></a></li>
+            <li class="left"><a href="#"><img src="img/o5.jpg" height="250" width="300" /></a></li>
+            <li class="left"><a href="#"><img src="img/o6.jpg" height="250" width="300" /></a></li>
+            <li class="left"><a href="#"><img src="img/p4.jpg" height="250" width="300" /></a></li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            $('li').mouseover(function(){
+                // $(this).fadeTo(1000,0.5);
+                $(this).siblings().fadeTo(1,0.5)
+            });
+            $('li').mouseout(function(){
+                // $(this).fadeTo(1000,0.5);
+                $('li').fadeTo(1,1)
+            });
+        });
+    </script>
+</body>
+</html>

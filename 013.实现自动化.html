@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动化下拉列表</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        li{
+            list-style-type: none;
+        }
+        ul li ul li{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            爱好
+            <ul>
+                <li>足球</li>
+                <li>街舞</li>
+                <li>前端</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(function(){
+            // $('ul li').mouseover(function(){
+            //     $("ul li ul li").show();
+            // });
+            // $('ul li').mouseout(function(){
+            //     $("ul li ul li").hide();
+            // });
+
+            //更简单的办法  hover
+            // $('ul li').hover(function(){//第一个代表mouseover   第二个代表mouseout
+            //     $("ul li ul li").show()
+            // },function(){
+            //     $("ul li ul li").hide()
+            // })
+
+
+            //更更更简单的办法
+            $("ul li").hover(function(){
+                $("ul li ul li").toggle()
+            })
+        })
+    </script>
+</body>
+</html>

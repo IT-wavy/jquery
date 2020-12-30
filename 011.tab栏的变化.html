@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏的变化</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .right{
+            float: right;
+        }
+        .left{
+            float: left;
+        }
+        #main{
+            height: 800px;
+            width: 800px;
+            margin: auto;
+            margin-top: 100px;
+            /* background-color: pink; */
+        }
+        .tab_list{
+            list-style-type: none;
+            height: 40px;
+            width: 158px;
+            text-align: center;
+            border: black solid 1px;
+            line-height: 40px;
+            background-color: pink;
+        }
+        #tabMain{
+            width: 800px;
+            height: 400px;
+            /* background-color: red; */
+            position: relative;
+        }
+        .tab_main{
+            width: 800px;
+            height: 400px;
+            /* background-color: red; */
+            position:absolute;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <ul id="tabList">
+            <li class="tab_list left" style="background-color: red;">第一个</li>
+            <li class="tab_list left">第二个</li>
+            <li class="tab_list left">第三个</li>
+            <li class="tab_list left">第四个</li>
+            <li class="tab_list left">第五个</li>
+        </ul>
+        <div id="tabMain" class="left">
+            <div class="tab_main" style="display: block;">我是你大哥</div>
+            <div class="tab_main">我是你二哥</div>
+            <div class="tab_main">我是你三哥</div>
+            <div class="tab_main">我是你四哥</div>
+            <div class="tab_main">我是你五哥</div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $("ul li").mouseover(function(){
+                $(this).css('background-color','red');
+                $(this).siblings().css('background-color','');//这里可以删除掉后面的属性值pink
+                let index = $(this).index();
+                $(".tab_main").eq(index).show();
+                $(".tab_main").eq(index).siblings().hide();
+            })
+        })
+    </script>
+</body>
+</html>

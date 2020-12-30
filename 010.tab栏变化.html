@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏变换</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        /* #main{
+            margin: auto;
+            height: 1000px;
+            width: 1000px;
+        } */
+        #tab_list li{
+            list-style-type: none;
+            float: left;
+            height: 30px;
+            width: 80px;
+            border: black solid 1px;
+            text-align: center;
+        }
+        .tab_item{
+            position: relative;
+            /* margin-left: 100px;
+            margin-top: 400px; */
+        }
+        .item{
+            position:absolute;
+            display: none;
+            /* float: left; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="main"> -->
+    <ul id="tab_list">
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+        <li>第四个</li>
+        <li>第五个</li>
+    </ul>
+    <div class="tab_item">
+        <div class="item" style="display: block;">第一个显示</div>
+        <div class="item">第二个显示</div>
+        <div class="item">第三个显示</div>
+        <div class="item">第四个显示</div>
+        <div class="item">第五个显示</div>
+    </div>
+    <!-- </div> -->
+</body>
+</html>

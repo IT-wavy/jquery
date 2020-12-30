@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .hide{
+            color: pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">爱好</a>
+            <ul>
+        <li class="hide"><a href="#">足球</a></li>
+        <li class="hide"><a href="#">前端</a></li>
+        <li class="hide"><a href="#">街舞</a></li>
+            </ul>
+    </li>
+        
+    </ul>
+    <script>
+        $(function(){
+            // $("ul li ul li").hide();
+            $("ul li:first").mouseover(function(){
+                $("ul li ul li").show();
+            })
+            $("ul li:first").mouseout(function(){
+                $("ul li ul li").hide();
+            })
+        })
+    </script>
+</body>
+</html>

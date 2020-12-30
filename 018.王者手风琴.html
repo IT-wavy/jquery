@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王者手风琴</title>
+    <script  src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 100px;
+            width: 800px;
+            margin: auto;
+            margin-top: 100px;
+            background-color: pink;
+            /* position: relative; */
+        }
+        /* li{
+            list-style-type: none;
+        } */
+        li{
+            position: relative;
+        }
+        .big{
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            display: none;
+            /* float: left; */
+        }
+        .small{
+            width: 100px;
+            height: 100px;
+            position:absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            /* display: none; */
+            /* float: left; */
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <a href="#">
+                <img src="img/o1.jpg" alt="" class="small">
+                <img src="img/o2.jpg" alt="" class="big">
+                </a>
+            </li>
+        
+            <li>
+                <a href="#">
+                <img src="img/o4.jpg" alt="" class="small">
+                <img src="img/o5.jpg" alt="" class="big">
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

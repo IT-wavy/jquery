@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>each遍历元素</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        //目的给每个div更改不同的颜色
+        $(function(){
+            let arr = ["red","blue","pink"]
+            $("div").each(function(index,domElmet){
+                //第一个元素,是指的项目的索引号
+                // console.log(index);
+                //第二个项目是指的相应的索引号里面的内容，但他一定是个dom元素，所以不能使用jquery方法
+                // console.log(domElmet);
+                // $(domElmet).css("color","pink");
+                $(domElmet).css("color",arr[index]);
+                //但是其实我觉得用eq实现可能简单点，少数用eq实现，多数还是选择each
+            });
+            $.each($("div"),function(i,ele){
+                console.log(i);
+                console.log(ele);
+            });
+            //$.each常用于遍历数据
+            $.each(arr,function(index,item){
+                console.log(index);
+                console.log(item);
+            });
+            $.each({//$.each不仅能遍历数组同样，它也可以遍历对象
+                name:"wavy",
+                age:19
+            },function(index,domElmet){
+                console.log(index);
+                console.log(domElmet);
+            });
+        })
+    </script>
+</body>
+</html>

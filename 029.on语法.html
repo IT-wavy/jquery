@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on语法</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+    </ul>
+    <script>
+        // $("ul li").click(function(){
+        //     alert(1111);
+        // });
+        // let li = $("<li>我是后来的li</li>");
+        // $("ul").append(li);//用上述的方法后，是没办法给动态添加的li进行alert的
+
+        //用on方法可以实现
+        $("ul").on("click","li",function(){
+            alert(11111);
+        });
+        let li = $("<li>我是后来的li</li>");
+        $("ul").append(li)
+    </script>
+</body>
+</html>

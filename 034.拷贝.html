@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            // let m = {};
+            // let obj = {
+            //     name:"wavy",
+            //     id:1,
+            //     msg:{
+            //         age:18
+            //     }
+            // };
+            // $.extend(m,obj);
+            // console.log(m);
+
+            //加入被粘贴对象不为空，就会将其覆盖
+            // let m = {id:0};
+            // let obj = {
+            //     name:"wavy",
+            //     id:1,
+            //     msg:{
+            //         age:18
+            //     }
+            // };
+            // $.extend(m,obj);
+            // console.log(m);
+
+            //浅拷贝
+            let m = {};
+            let obj = {
+                name:"wavy",
+                id:1,
+                msg:{
+                    age:18
+                }
+            };
+            // $.extend(m,obj);
+            // console.log(m);
+            // obj.msg.age = 20;//当里面的复杂对象被改变的时候
+            // console.log(m);//也会随之被改变，这就是浅拷贝，只链接他的地址
+
+            //深拷贝
+            $.extend(true,m,obj);//是复制对象，而不是链接
+            console.log(obj);
+            console.log(m);//这里面的age仍然是18，而不会更改为20
+            obj.msg.age = 20;
+        });
+    </script>
+</body>
+</html>

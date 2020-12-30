@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>off解绑事件</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("div").on({
+                click: function(){
+                    $(this).css("background","blue");
+                },
+                mouseover: function(){
+                    $(this).css("background","skyblue");
+                }
+            });
+            // $("div").off();//这个代表，将这个元素的全部加的效果去掉
+            // $("div").off("click");//表示去除鼠标点击事件
+            $("ul").on("click","li",function(){//事件委托
+                alert(1111);
+            });
+            $("ul").off("click","li");//同样的方法去除掉它的事件
+            //可以让它实现一次one()
+            let li = $("<li class='one'>大家好，我是后来的li</li>");
+            $("ul").append(li);
+            $("ul").one("click",".one",function(){//事件委托只实现一次
+                alert(11111);
+            });
+        });
+    </script>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <ul>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+        <li>大家好</li>
+    </ul>
+</body>
+</html>

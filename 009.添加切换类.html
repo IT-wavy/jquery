@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加切换类</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            margin: auto;
+            background-color: pink;
+        }
+        .curren{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="curren">
+
+    </div>
+    <script>
+        $(function(){
+
+            //添加类addClass
+            // $('div').click(function(){
+            //     // alert(1111)
+            //     $(this).addClass('curren');
+            // })
+
+            //移除类removeClass
+            //这里要先为上面的div添加样式curren
+            // $(function(){
+            //     $('div').click(function(){
+            //         $(this).removeClass('curren');
+            //     })
+            // })
+
+            //切换类toggleClass      这个的话不需要要求原来的标签里面是否有curren类选择器
+            $(function(){
+                $('div').click(function(){
+                    $(this).toggleClass('curren');
+                })
+            })
+        })
+    </script>
+</body>
+</html>

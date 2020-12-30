@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变css样式</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        $(function(){
+            // $('div').css('height','500px');
+            // $('div').css('width','500px');
+            // $('div').css('background-color','red');
+
+            //改变多个样式
+            $('div').css({
+                height:500,
+                width:600,
+                backgroundColor:"red"
+            })
+        })
+    </script>
+</body>
+</html>

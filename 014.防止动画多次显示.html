@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动化下拉列表</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        li{
+            list-style-type: none;
+        }
+        ul li ul li{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            爱好
+            <ul>
+                <li>足球</li>
+                <li>街舞</li>
+                <li>前端</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(function(){
+            //注意stop这个方法必须加在动画的前面
+            $("ul li").hover(function(){
+                $("ul li ul li").stop().toggle();
+            })
+        })
+    </script>
+</body>
+</html>

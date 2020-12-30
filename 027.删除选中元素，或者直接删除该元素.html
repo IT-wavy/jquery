@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除元素</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <input type="checkbox" />足球
+        <button>删除</button>
+    </div>
+    <div>
+        <input type="checkbox" />前端
+        <button>删除</button>
+    </div>
+    <div>
+        <input type="checkbox" />街舞
+        <button>删除</button>
+    </div>
+    <button id="all">删除选中的商品</button>
+    <button id="remove_all">清空全部</button>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                // $(this).parent("div").empty();
+                $(this).parent("div").remove();//两种方法都可以实现
+            });
+            $("#all").click(function(){//首先获取到全部删除按钮
+                $("input:checked").parent("div").remove();//这个是看见老师讲的，这个牛逼，这里面有隐式迭代
+            });
+            $("#remove_all").click(function(){
+                $("div").remove();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟微博发布</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        ul li{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="weibo">
+        <span>微博发布</span>
+        <textarea name="" id="txt" cols="30" rows="10"></textarea>
+        <button class="btn">发布</button>
+        <ul></ul>
+    </div>
+    <script>
+        $(function(){
+            $(".btn").on("click",function(){
+                // alert(1111);
+                if($("#txt").val() != ""){
+                    let li = $("<li></li>");
+                    li.html($("#txt").val() + "<a href='javascript:;'>删除</a>");
+                    $("ul").prepend(li);
+                    $("#txt").val("");
+                    li.slideDown(); 
+                }
+            });
+            // $("ul a").on("click",function(){
+            //     // $(this).parent("li").remove();
+            //     alert(11111);
+            // });
+            //上述方法不行，应该用事件委托
+            //on可以给动态创建的元素进行操作
+            $("ul").on("click","a",function(){
+                // alert(1111);
+                // $(this).parent("li").slideUp();
+                // $(this).parent("li").remove();
+                //用上述方法就不能实现动态删除
+                $(this).parent("li").slideUp(function(){
+                    $(this).remove();//用回调函数就可以实现，在动画结束后，实现删除
+                });
+            });
+        });
+    </script>
+</body>
+</html>

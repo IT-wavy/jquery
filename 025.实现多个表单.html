@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多个表单</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        input{
+            width: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <button>-</button>
+            <input type="text" value="1" onfocus=this.blur() ><!--!使用onfocus=this.blur(),是为了让该input不能被编辑    disabled也可以-->
+            <button>+</button>
+        </div><br>
+        <div>
+            <button>-</button> 
+            <input type="text" value="1" disabled ><!--也可以但是颜色不一样-->
+            <button>+</button>
+        </div><br>
+        <div>
+            <button>-</button>
+            <input type="text" value="1" readonly="true" ><!--也可以实现,可以被选中但是不能更改-->
+            <button>+</button>
+        </div><br>
+        <div>
+            <button>-</button>
+            <input type="text" value="1" onfocus=this.blur() >
+            <button>+</button>
+        </div><br>
+        <span>4</span>
+    </div>
+    <script>
+        $(function(){
+            var span = parseInt($("span").text());
+            $("button").click(function(){
+                var val = $(this).siblings("input").val();//这里使用siblings,主要是防止获得其他的input
+                // console.log($(this).text());
+                if($(this).text() == "-"){
+                    if(val == 0){
+
+                    }else{
+                        span--;
+                    }
+                    val--;
+                }else{
+                    val++;
+                    span++;
+                }
+                if(val <= 0){
+                    val = 0;
+                }
+                $(this).siblings("input").val(val);
+                $("span").text(span);
+                // $("input").change(function(){
+                //     var many = 0;
+                //     $.each($("input"),function(i,ele){
+                //         var ele = parseInt(ele);
+                //         many +=ele;
+                //     });
+                //     console.log(many);
+                // });
+            });
+        });
+    </script>
+</body>
+</html>

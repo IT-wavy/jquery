@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏设计</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #nav{
+            height: 50px;
+            /* background-color: pink; */
+        }
+        #first{
+            margin-left: 10%;
+            
+        }
+        .main{
+            height: 19px;
+            width: 33px;
+            list-style-type:none;
+            border: black solid 1px;
+        }
+        .gege{
+            display: none;
+            list-style-type:none;
+            height: 19px;
+            width: 33px;
+            border: black solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul id="first">
+            <li class="main">
+                爱好
+                <ul>
+                    <li class="gege">足球</li>
+                    <li class="gege">街舞</li>
+                    <li class="gege">前端</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            $('.main').mouseover(function(){
+                $('.gege').show();
+            })
+            $('.main').mouseout(function(){
+                $('.gege').hide();
+            })
+        })
+    </script>
+</body>
+</html>

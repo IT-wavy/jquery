@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取文本值</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <span>
+            123
+        </span>
+    </div>
+    <input type="text" value="你好呀">
+    <script>
+        $(function(){
+            //获得div下面的标签
+            console.log($("div").html());
+            //获得div下面的文本值
+            console.log($("div").text());
+            //获取标签的value值
+            console.log($("input").val());
+
+            //同样，在获取的同时也可以改变其原有的内容
+            $("div").html("456");
+
+            //也可以改变input标签的value值
+            $("input").val("你好！世界");
+        });
+    </script>
+</body>
+</html>

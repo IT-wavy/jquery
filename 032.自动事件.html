@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动出发事件</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <input type="text">
+    <script>
+        $(function(){
+            $("div").on("click",function(){//给他绑定事件
+                alert(111111);
+            });
+            //1.自动触发    事件。行为（）
+            // $("div").click();  
+            //2.自动触发   
+            // $("div").trigger("click");
+            //3.自动触发   它不会触发这个模块的默认效果
+            // $("div").triggerHandler("click");
+        });
+        //分解   trigger  和   triggerHandler  的区别
+        $("input").on("focus",function(){
+            $(this).val("你好呀");
+        });
+        //用trigger方法就会触发他的默认事件，就会把光标停留在input里面
+        // $("input").trigger("focus");
+        //但是使用triggerHandler，就不会触发他的默认事件，就不会显示光标
+        $("input").triggerHandler("focus");
+    </script>
+</body>
+</html>

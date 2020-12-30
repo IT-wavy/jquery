@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义动画效果</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 500px;
+            height: 100px;
+            background-color: pink;
+            position: relative;/**这一步是关键，一定要给他加相对定位*/
+        }
+    </style>
+</head>
+<body>
+    <button>实现动画效果</button>
+    <div></div>
+    
+    <script>
+        $(function(){
+            $('button').click(function(){
+                // alert(1111);
+                $('div').animate({
+                    left:500,
+                    top:100
+                })
+            });
+        })
+    </script>
+</body>
+</html>
